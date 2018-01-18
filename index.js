@@ -1,12 +1,12 @@
 export default {
     install (Vue, options) {
-        if (!options || (options && !options.extendDate)) {
+        if (!options || (options && options.extendDate)) {
             require('protoypes/date');
         }
-        if (!options || (options && !options.extendNumber)) {
+        if (!options || (options && options.extendNumber)) {
             require('protoypes/number');
         }
-        if (!options || (options && !options.extendString)) {
+        if (!options || (options && options.extendString)) {
             require('protoypes/string');
         }
 
