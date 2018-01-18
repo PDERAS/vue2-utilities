@@ -1,0 +1,26 @@
+{
+  "name": "vue2-utilities",
+  "version": "1.0.0",
+  "description": "Vue utilities is built as a vue plugin to allow for general purpose functions to be used throughout the application",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "vue2",
+    "vue2js",
+    "vue2utilities",
+    "vue2-utilities"
+  ],
+  "contributors": [
+      {
+          "name": "Cody Moorhouse",
+          "email": "cody.moorhouse@pderas.com"
+      },
+      {
+          "name": "David Buss",
+          "email": "david.buss@pderas.com"
+      }
+  ],
+  "license": "MIT"
+}
