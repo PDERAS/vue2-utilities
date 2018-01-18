@@ -7,7 +7,11 @@ Vue utilities is built as a vue plugin to allow for general purpose functions to
 ```javascript
 import Utilities from "vue2-utilities";
 
-Vue.use(Utilities);
+Vue.use(Utilities, {
+    extendDate: true,
+    extendNumber: true,
+    extendString: true
+});
 ```
 ## Usage
 General usage: ```this.$utils.[FUNCTION_NAME]```
@@ -17,8 +21,7 @@ this.$utils.redirectTo('/login')
 ```
 
 ## Functions
-
-| name       | parameter                  | type                    | Description | Return |
+| name       | Parameter                  | Type                    | Description | Return |
 |------------|----------------------------|-------------------------|-------------|--------|
 | createDate | **timestamp**              | String                  | Creates a date object from a database timestamp and returns a date object in UTC | Date |
 | getParent  | **el** <br> **identifier** | HTMLElement <br> String | Finds the closest parent element with the given identifier | HTMLElement |
@@ -27,6 +30,35 @@ this.$utils.redirectTo('/login')
 | redirectTo | **url**                    | String                  | Redirects the window to a new url (based off hostname url) | N/A |
 | shadeColor | **color** <br> **percent** | String <br> Number  | Takes a color and a percent and shades that color | String |
 **Required parameters are bolded**
+
+
+## Prototypes
+### Date
+| Name             | Parameter | Type | Description                                     | Return |
+|------------------|-----------|------|-------------------------------------------------|--------|
+| applyTimezone    |           |      | Applys the local timezone to the date object    | Date   |
+| getMinutesString |           |      | Gets the minute string for a date.              | String |
+| getHoursString   |           |      | Gets the hour string for a date.                | String |
+| subMinutes       | **date**  | Date | Substracts the minutes of one date from another | Number |
+
+### Number
+| Name           | Parameter | Type | Description                                     | Return |
+|----------------|-----------|------|-------------------------------------------------|--------|
+| toCommaString  |           |      | Converts a number to a comma seperated string   | String |
+| toDollarString |           |      | Converts a number to a dollar string            | String |
+**Required parameters are bolded**
+
+### String
+| Name          | Parameter | Type   | Description                            | Return |
+|---------------|-----------|--------|----------------------------------------|--------|
+| capitalize    |           |        | Capitalizes the first character        | String |
+| capitalizeAll |           |        | Capitalizes all characters             | String |
+| spacesToChar  | **char**  | String | Converts spaces to specified character | String |
+| stripSlashes  |           |        | Removes slashes                        | String |
+| stripPeriods  |           |        | Removes periods                        | String |
+| stripDashes   |           |        | Removes dashes                         | String |
+**Required parameters are bolded**
+
 
 ## License
 This project is covered under the MIT License. Feel free to use it wherever you like.
