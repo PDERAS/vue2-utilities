@@ -10,7 +10,23 @@ import Utilities from "vue2-utilities";
 Vue.use(Utilities);
 ```
 ## Usage
+General usage: ```this.$utils.[FUNCTION_NAME]```
+```javascript
+// RedirectTo Example
+this.$utils.redirectTo('/login')
+```
 
+## Functions
+
+| name       | parameter                  | type                    | Description | Return |
+|------------|----------------------------|-------------------------|-------------|--------|
+| createDate | **timestamp**              | String                  | Creates a date object from a database timestamp and returns a date object in UTC | Date |
+| getParent  | **el** <br> **identifier** | HTMLElement <br> String | Finds the closest parent element with the given identifier | HTMLElement |
+| printView  | **html**                   | String                  | Create a print screen for the view given | N/A |
+| nl2br      | **str** <br> is_xhtml      | String <br> Boolean     | Converts all newline characters in a string into 'br' tag | String |
+| redirectTo | **url**                    | String                  | Redirects the window to a new url (based off hostname url) | N/A |
+| shadeColor | **color** <br> **percent** | String <br> Number  | Takes a color and a percent and shades that color | String |
+**Required parameters are bolded**
 
 ## License
 This project is covered under the MIT License. Feel free to use it wherever you like.

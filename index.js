@@ -52,7 +52,7 @@ export default {
              *
              * @param string html
              *
-             * @return void
+             * @return
              */
             printView(html) {
                 /* Create the iframe */
@@ -97,14 +97,14 @@ export default {
              *
              * @param string url
              *
-             * @return void
+             * @return
              */
             redirectTo(url) {
                 window.location.href = window.location.protocol + '//' + window.location.hostname + url;
             },
 
             /**
-             * Takes a color and a percent
+             * Takes a color and a percent and shades that color
              *
              * @param string color
              * @param Number percent
