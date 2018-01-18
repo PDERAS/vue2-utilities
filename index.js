@@ -1,7 +1,16 @@
 export default {
     install (Vue, options) {
-        Vue.prototype.$utils = {
+        if (!options || (options && !options.extendDate)) {
+            require('protoypes/date');
+        }
+        if (!options || (options && !options.extendNumber)) {
+            require('protoypes/number');
+        }
+        if (!options || (options && !options.extendString)) {
+            require('protoypes/string');
+        }
 
+        Vue.prototype.$utils = {
             /**
              * Creates a date object from a database timestamp.
              *
