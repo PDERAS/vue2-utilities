@@ -1,10 +1,14 @@
 {
-  "name": "vue2-utilities",
+  "name": "@pderas/vue2-utilities",
   "version": "1.0.0",
   "description": "Vue utilities is built as a vue plugin to allow for general purpose functions to be used throughout the application",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PDERAS/vue2-utilities.git"
   },
   "keywords": [
     "vue2",
@@ -22,5 +26,9 @@
           "email": "david.buss@pderas.com"
       }
   ],
-  "license": "MIT"
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/PDERAS/vue2-utilities/issues"
+  },
+  "homepage": "https://github.com/PDERAS/vue2-utilities#readme"
 }
