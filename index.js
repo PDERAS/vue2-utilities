@@ -1,13 +1,13 @@
 export default {
     install (Vue, options) {
         if (!options || (options && options.extendDate)) {
-            require('protoypes/date');
+            require('./protoypes/date');
         }
         if (!options || (options && options.extendNumber)) {
-            require('protoypes/number');
+            require('./protoypes/number');
         }
         if (!options || (options && options.extendString)) {
-            require('protoypes/string');
+            require('./protoypes/string');
         }
 
         Vue.prototype.$utils = {
