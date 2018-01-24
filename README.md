@@ -5,7 +5,7 @@ A vue.js utilities plugin
 Vue utilities is built as a vue plugin to allow for general purpose functions to be used throughout the application
 
 ```javascript
-import Utilities from "vue2-utilities";
+import Utilities from "@pderas/vue2-utilities";
 
 Vue.use(Utilities, {
     extendDate: true,
@@ -21,14 +21,15 @@ this.$utils.redirectTo('/login')
 ```
 
 ## Functions
-| name       | Parameter                  | Type                    | Description | Return |
-|------------|----------------------------|-------------------------|-------------|--------|
-| createDate | **timestamp**              | String                  | Creates a date object from a database timestamp and returns a date object in UTC | Date |
-| getParent  | **el** <br> **identifier** | HTMLElement <br> String | Finds the closest parent element with the given identifier | HTMLElement |
-| printView  | **html**                   | String                  | Create a print screen for the view given | N/A |
-| nl2br      | **str** <br> is_xhtml      | String <br> Boolean     | Converts all newline characters in a string into 'br' tag | String |
-| redirectTo | **url**                    | String                  | Redirects the window to a new url (based off hostname url) | N/A |
-| shadeColor | **color** <br> **percent** | String <br> Number  | Takes a color and a percent and shades that color | String |
+| name       | Parameter                  | Type                    | Description                                                                      | Return      |
+|------------|----------------------------|-------------------------|----------------------------------------------------------------------------------|-------------|
+| createDate | **timestamp**              | String                  | Creates a date object from a database timestamp and returns a date object in UTC | Date        |
+| getParent  | **el** <br> **identifier** | HTMLElement <br> String | Finds the closest parent element with the given identifier                       | HTMLElement |
+| printView  | **html**                   | String                  | Create a print screen for the view given                                         | N/A         |
+| nl2br      | **str** <br> is_xhtml      | String <br> Boolean     | Converts all newline characters in a string into 'br' tag                        | String      |
+| redirectTo | **url**                    | String                  | Redirects the window to a new url (based off hostname url)                       | N/A         |
+| shadeColor | **color** <br> **percent** | String <br> Number      | Takes a color and a percent and shades that color                                | String      |
+
 **Required parameters are bolded**
 
 
@@ -41,11 +42,14 @@ this.$utils.redirectTo('/login')
 | getHoursString   |           |      | Gets the hour string for a date.                | String |
 | subMinutes       | **date**  | Date | Substracts the minutes of one date from another | Number |
 
+**Required parameters are bolded**
+
 ### Number
 | Name           | Parameter | Type | Description                                     | Return |
 |----------------|-----------|------|-------------------------------------------------|--------|
 | toCommaString  |           |      | Converts a number to a comma seperated string   | String |
 | toDollarString |           |      | Converts a number to a dollar string            | String |
+
 **Required parameters are bolded**
 
 ### String
@@ -57,6 +61,7 @@ this.$utils.redirectTo('/login')
 | stripSlashes  |           |        | Removes slashes                        | String |
 | stripPeriods  |           |        | Removes periods                        | String |
 | stripDashes   |           |        | Removes dashes                         | String |
+
 **Required parameters are bolded**
 
 
