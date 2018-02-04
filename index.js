@@ -10,7 +10,7 @@ export default {
             require('./prototypes/string');
         }
 
-        Vue.prototype.$utils = {
+        Vue.$utils = Vue.prototype.$utils = {
             /**
              * Creates a date object from a database timestamp.
              *
