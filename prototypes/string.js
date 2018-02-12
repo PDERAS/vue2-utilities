@@ -11,7 +11,7 @@ String.prototype.capitalizeAll = function(delim = ' ') {
         str[i] = str[i].join('');
     }
 
-    return str.join(' ');
+    return str.join(delim);
 }
 
 String.prototype.spacesToChar = function(char) {
