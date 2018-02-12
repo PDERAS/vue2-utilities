@@ -2,8 +2,8 @@ String.prototype.capitalize = function() {
     return (this.toLowerCase()).charAt(0).toUpperCase() + (this.toLowerCase().slice(1));
 }
 
-String.prototype.capitalizeAll = function() {
-    var str = this.toLowerCase().split(' ');
+String.prototype.capitalizeAll = function(delim = ' ') {
+    var str = this.toLowerCase().split(delim);
 
     for(var i = 0; i < str.length; i++) {
         str[i] = str[i].split('');
