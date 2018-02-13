@@ -82,9 +82,6 @@ export default {
 
                         var paramValue = typeof(a[1])==='undefined' ? true : a[1];
 
-                        paramName = paramName.toLowerCase();
-                        paramValue = paramValue.toLowerCase();
-
                         if (obj[paramName]) {
                             if (typeof obj[paramName] === 'string') {
                                 obj[paramName] = [obj[paramName]];
