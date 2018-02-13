@@ -25,6 +25,7 @@ this.$utils.redirectTo('/login')
 |------------|----------------------------|-------------------------|----------------------------------------------------------------------------------|-------------|
 | createDate | **timestamp**              | String                  | Creates a date object from a database timestamp and returns a date object in UTC | Date        |
 | getParent  | **el** <br> **identifier** | HTMLElement <br> String | Finds the closest parent element with the given identifier                       | HTMLElement |
+| getUrlParams | url                      | String                  | Converts the url parameters into an object                                       | Object |
 | printView  | **html**                   | String                  | Create a print screen for the view given                                         | N/A         |
 | nl2br      | **str** <br> is_xhtml      | String <br> Boolean     | Converts all newline characters in a string into 'br' tag                        | String      |
 | redirectTo | **url**                    | String                  | Redirects the window to a new url (based off hostname url)                       | N/A         |
