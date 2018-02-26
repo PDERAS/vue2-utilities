@@ -36,12 +36,13 @@ this.$utils.redirectTo('/login')
 
 ## Prototypes
 ### Date
-| Name             | Parameter | Type | Description                                     | Return |
-|------------------|-----------|------|-------------------------------------------------|--------|
-| applyTimezone    |           |      | Applys the local timezone to the date object    | Date   |
-| getMinutesString |           |      | Gets the minute string for a date.              | String |
-| getHoursString   |           |      | Gets the hour string for a date.                | String |
-| subMinutes       | **date**  | Date | Substracts the minutes of one date from another | Number |
+| Name             | Parameter               | Type            | Default       |Description                                                              | Return |
+|------------------|-------------------------|-----------------|---------------|-------------------------------------------------------------------------|--------|
+| applyTimezone    |                         |                 |               | Applys the local timezone to the date object                            | Date   |
+| getMinutesString |                         |                 |               | Gets the minute string for a date.                                      | String |
+| getHoursString   |                         |                 |               | Gets the hour string for a date.                                        | String |
+| subMinutes       | **date**                | Date            |               | Substracts the minutes of one date from another                         | Number |
+| toFormattedString| monthDisplay, showTime  | String, Boolean | 'short', true | Converts the date to a custom formatted string (month day, year @ time) | String |
 
 **Required parameters are bolded**
 
