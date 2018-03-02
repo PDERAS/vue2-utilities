@@ -151,11 +151,16 @@ export default {
              * Redirects the window to a new url
              *
              * @param string url
+             * @param boolean external
              *
              * @return
              */
-            redirectTo(url) {
-                window.location.href = window.location.protocol + '//' + window.location.hostname + url;
+            redirectTo(url, external) {
+                if (typeof external != 'undefined' && external) {
+                    window.location.href = url;
+                } else {
+                    window.location.href = window.location.protocol + '//' + window.location.hostname + url;
+                }
             },
 
             /**
