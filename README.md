@@ -47,16 +47,17 @@ this.$utils.redirectTo('/login')
 **Required parameters are bolded**
 
 ### Number
-| Name           | Parameter | Type | Description                                     | Return |
-|----------------|-----------|------|-------------------------------------------------|--------|
-| toCommaString  |           |      | Converts a number to a comma seperated string   | String |
-| toDollarString |           |      | Converts a number to a dollar string            | String |
+| Name           | Parameter | Type   | Default | Description                                     | Return |
+|----------------|-----------|:------:|---------|-------------------------------------------------|:------:|
+| precisionRound | precision | Number | 0       | Rounds a number to the specified precision      | Number |
+| toCommaString  |           |        |         | Converts a number to a comma seperated string   | String |
+| toDollarString |           |        |         | Converts a number to a dollar string            | String |
 
 **Required parameters are bolded**
 
 ### String
 | Name          | Parameter | Type   | Description                                          | Return |
-|---------------|-----------|--------|------------------------------------------------------|--------|
+|---------------|-----------|:------:|------------------------------------------------------|:------:|
 | capitalize    |           |        | Capitalizes the first character                      | String |
 | capitalizeAll | delim     | String | Capitalizes all characters (delim defaults to space) | String |
 | spacesToChar  | **char**  | String | Converts spaces to specified character               | String |

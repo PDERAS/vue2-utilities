@@ -23,3 +23,8 @@ Number.prototype.toDollarString = function() {
 
     return "$" + val;
 }
+
+Number.prototype.precisionRound = function(precision = 0) {
+    var factor = Math.pow(10, precision);
+    return Math.round(number * factor) / factor;
+}
