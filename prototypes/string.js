@@ -29,3 +29,7 @@ String.prototype.stripPeriods = function() {
 String.prototype.stripDashes = function() {
     return this.replace(/\-/g, '');
 }
+
+String.prototype.toAlphaNumeric = function() {
+    return this.replace(/[\W_]+/g, " ");
+}

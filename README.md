@@ -56,14 +56,15 @@ this.$utils.redirectTo('/login')
 **Required parameters are bolded**
 
 ### String
-| Name          | Parameter | Type   | Description                                          | Return |
-|---------------|-----------|:------:|------------------------------------------------------|:------:|
-| capitalize    |           |        | Capitalizes the first character                      | String |
-| capitalizeAll | delim     | String | Capitalizes all characters (delim defaults to space) | String |
-| spacesToChar  | **char**  | String | Converts spaces to specified character               | String |
-| stripSlashes  |           |        | Removes slashes                                      | String |
-| stripPeriods  |           |        | Removes periods                                      | String |
-| stripDashes   |           |        | Removes dashes                                       | String |
+| Name           | Parameter | Type   | Description                                          | Return |
+|----------------|-----------|:------:|------------------------------------------------------|:------:|
+| capitalize     |           |        | Capitalizes the first character                      | String |
+| capitalizeAll  | delim     | String | Capitalizes all characters (delim defaults to space) | String |
+| spacesToChar   | **char**  | String | Converts spaces to specified character               | String |
+| stripSlashes   |           |        | Removes slashes                                      | String |
+| stripPeriods   |           |        | Removes periods                                      | String |
+| stripDashes    |           |        | Removes dashes                                       | String |
+| toAlphaNumeric |           |        | Coverts a string to alpha numeric                    | String |
 
 **Required parameters are bolded**
 
