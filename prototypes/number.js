@@ -11,7 +11,7 @@ Number.prototype.toDollarString = function() {
     var val = this.toFixed(2);
     var valSplit = val.split('.');
 
-    if (isNaN(Number(val)) || !isFinite(val) || Number(val) == 0) {
+    if (isNaN(Number(val)) || !isFinite(val)) {
         return "N/A";
     }
 
