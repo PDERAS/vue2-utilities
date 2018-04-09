@@ -32,7 +32,7 @@ Date.prototype.toFormattedString = function(monthDisplay = 'short', showTime = t
         throw "ERROR: toFormattedString: monthDisplay must be either 'short' or 'long'";
     }
 
-    console.error('Date.toFormattedString is deprecated. Date.format should now be used with new syntax.');
+    console.error('Date.toFormattedString is depreciated. Date.format should now be used with new syntax.');
     var format = 'm d, Y';
     if (monthDisplay == 'long') {
         format = 'M d, Y';
