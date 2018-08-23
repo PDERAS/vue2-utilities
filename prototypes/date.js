@@ -6,7 +6,7 @@ Date.prototype.addTimezoneOffset = function() {
 }
 
 Date.prototype.applyTimezone = function() {
-    console.log("WARNING: This function is deprecated, please convert to using 'removeTimezoneOffset'");
+    console.warn("WARNING: This function is deprecated, please convert to using 'removeTimezoneOffset'");
 
     var date = new Date(this);
     date.removeTimezoneOffset();
