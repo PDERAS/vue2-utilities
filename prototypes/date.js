@@ -1,13 +1,17 @@
+Date.prototype.addTimezoneOffset = function() {
+    var now = new Date();
+    var offset = now.getTimezoneOffset();
+
+    this.setMinutes(this.getMinutes() + offset);
+}
+
 Date.prototype.applyTimezone = function() {
-    var year = this.getFullYear();
-    var month = this.getMonth();
-    var date = this.getDate();
+    console.log("WARNING: This function is deprecated, please convert to using 'removeTimezoneOffset'");
 
-    var hour = this.getHours();
-    var min = this.getMinutes();
-    var sec = this.getSeconds();
+    var date = new Date(this);
+    date.removeTimezoneOffset();
 
-    return new Date(Date.UTC(year, month, date, hour, min, sec));
+    return date;
 }
 
 Date.prototype.getMinutesString = function() {
@@ -18,6 +22,13 @@ Date.prototype.getMinutesString = function() {
 Date.prototype.getHoursString = function() {
     var hours = this.getHours();
     return hours < 10 ? "0" + hours : hours;
+}
+
+Date.prototype.removeTimezoneOffset = function() {
+    var now = new Date();
+    var offset = now.getTimezoneOffset();
+
+    this.setMinutes(this.getMinutes() - offset);
 }
 
 Date.prototype.subMinutes = function(date) {
