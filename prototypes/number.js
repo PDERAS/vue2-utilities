@@ -25,6 +25,5 @@ Number.prototype.toDollarString = function() {
 }
 
 Number.prototype.precisionRound = function(precision = 0) {
-    var factor = Math.pow(10, precision);
-    return Math.round(this * factor) / factor;
+    return Number(Math.round(this + 'e' + precision) + 'e-' + precision);
 }
