@@ -41,9 +41,11 @@ export default {
             getParent(el, identifier) {
                 var idn = identifier.toLowerCase();
                 var type = 'class';
-                if (/^#/.test(identifier)) type = 'id';
+                if (/^#/.test(identifier)) {
+                    type = 'id';
+                }
 
-                type == 'class' ? idn = idn.replace(/./, '') : idn = idn.replace(/#/, '');
+                idn = idn.replace(/^\.|#/, '');
                 while (el && el.parentNode) {
                     el = el.parentNode;
                     if (type == 'id') {
