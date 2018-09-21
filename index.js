@@ -1,5 +1,5 @@
 export default {
-    install (Vue, options) {
+    install(Vue, options) {
         if (!options || (options && options.extendDate)) {
             require('./prototypes/date');
         }
@@ -27,7 +27,7 @@ export default {
                 var d = a[0].split("-");
                 var t = a[1].split(":");
 
-                return new Date(Date.UTC(d[0],(d[1]-1),d[2],t[0],t[1],t[2]));
+                return new Date(Date.UTC(d[0], (d[1] - 1), d[2], t[0], t[1], t[2]));
             },
 
             /**
@@ -41,15 +41,21 @@ export default {
             getParent(el, identifier) {
                 var idn = identifier.toLowerCase();
                 var type = 'class';
-                if (/^#/.test(identifier))  type = 'id';
+                if (/^#/.test(identifier)) {
+                    type = 'id';
+                }
 
-                type == 'class' ?  idn = idn.replace(/./, '') : idn = idn.replace(/#/, '');
+                idn = idn.replace(/^\.|#/, '');
                 while (el && el.parentNode) {
                     el = el.parentNode;
                     if (type == 'id') {
-                        if (el.id && el.id == idn) return el;
+                        if (el.id && el.id == idn) {
+                            return el;
+                        }
                     } else {
-                        if (el.classList && el.classList.contains(idn)) return el ;
+                        if (el.classList && el.classList.contains(idn)) {
+                            return el;
+                        }
                     }
                 }
 
@@ -71,16 +77,16 @@ export default {
                     queryString = queryString.split('#')[0];
                     var arr = queryString.split('&');
 
-                    for (var i=0; i<arr.length; i++) {
+                    for (var i = 0; i < arr.length; i++) {
                         var a = arr[i].split('=');
 
                         var paramNum = undefined;
                         var paramName = a[0].replace(/\[\d*\]/, (v) => {
-                            paramNum = v.slice(1,-1);
+                            paramNum = v.slice(1, -1);
                             return '';
                         });
 
-                        var paramValue = typeof(a[1])==='undefined' ? true : a[1];
+                        var paramValue = typeof (a[1]) === 'undefined' ? true : a[1];
 
                         if (obj[paramName]) {
                             if (typeof obj[paramName] === 'string') {
@@ -89,27 +95,27 @@ export default {
 
                             if (typeof paramNum === 'undefined') {
                                 obj[paramName].push(paramValue);
-                            }
-                            else {
+                            } else {
                                 obj[paramName][paramNum] = paramValue;
                             }
                         } else {
                             obj[paramName] = paramValue;
                         }
                     }
-              }
+                }
 
-              return obj;
+                return obj;
             },
 
             /**
              * Create a print screen for the view given.
              *
              * @param string html
+             * @param number timeout
              *
              * @return
              */
-            printView(html) {
+            printView(html, timeout = 500) {
                 /* Create the iframe */
                 var printFrame = document.createElement('iframe');
                 printFrame.name = "printFrame";
@@ -118,7 +124,7 @@ export default {
                 document.body.appendChild(printFrame);
 
                 /* Grab the frame from the iframe */
-                var frameDoc = printFrame.contentWindow ? printFrame.contentWindow :    printFrame.contentDocument.document ? printFrame.contentDocument.document : printFrame.contentDocument;
+                var frameDoc = printFrame.contentWindow ? printFrame.contentWindow : printFrame.contentDocument.document ? printFrame.contentDocument.document : printFrame.contentDocument;
 
                 /* Write the html to the iframe */
                 frameDoc.document.open();
@@ -129,7 +135,7 @@ export default {
                     frameDoc.focus();
                     frameDoc.print();
                     printFrame.remove();
-                }, 500);
+                }, timeout);
             },
 
             /**
@@ -144,7 +150,7 @@ export default {
              */
             nl2br(str, is_xhtml = false) {
                 var breakTag = is_xhtml ? '<br />' : '<br>';
-                return (str + '').replace(/([^>\r\n]?)(\r\n|\n\r|\r|\n)/g, '$1'+ breakTag +'$2');
+                return (str + '').replace(/([^>\r\n]?)(\r\n|\n\r|\r|\n)/g, '$1' + breakTag + '$2');
             },
 
             /**
