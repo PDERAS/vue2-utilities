@@ -1,4 +1,4 @@
-Number.prototype.toCommaString = () => {
+Number.prototype.toCommaString = function () {
     var result = this.toString();
     while (/(\d+)(\d{3})/.test(result)) {
         result = result.replace(/(\d+)(\d{3})/, '$1' + ',' + '$2');
@@ -7,7 +7,7 @@ Number.prototype.toCommaString = () => {
     return String(result);
 }
 
-Number.prototype.toDollarString = (showDollarSign = true) => {
+Number.prototype.toDollarString = function (showDollarSign = true) {
     var val = this.toFixed(2);
     var valSplit = val.split('.');
 
@@ -24,6 +24,6 @@ Number.prototype.toDollarString = (showDollarSign = true) => {
     return showDollarSign ? "$" + val : val;
 }
 
-Number.prototype.precisionRound = (precision = 0) => {
+Number.prototype.precisionRound = function (precision = 0) {
     return Number(Math.round(this + 'e' + precision) + 'e-' + precision);
 }
