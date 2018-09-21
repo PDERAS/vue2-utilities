@@ -47,9 +47,13 @@ export default {
                 while (el && el.parentNode) {
                     el = el.parentNode;
                     if (type == 'id') {
-                        if (el.id && el.id == idn) return el;
+                        if (el.id && el.id == idn) {
+                            return el;
+                        }
                     } else {
-                        if (el.classList && el.classList.contains(idn)) return el;
+                        if (el.classList && el.classList.contains(idn)) {
+                            return el;
+                        }
                     }
                 }
 
