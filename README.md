@@ -55,11 +55,11 @@ this.$utils.redirectTo('/login')
 **Required parameters are bolded**
 
 ### Number
-| Name           | Parameter | Type   | Default | Description                                     | Return |
-|----------------|-----------|:------:|---------|-------------------------------------------------|:------:|
-| precisionRound | precision | Number | 0       | Rounds a number to the specified precision      | Number |
-| toCommaString  |           |        |         | Converts a number to a comma seperated string   | String |
-| toDollarString |           |        |         | Converts a number to a dollar string            | String |
+| Name           | Parameter      | Type    | Default | Description                                     | Return |
+|----------------|----------------|:-------:|---------|-------------------------------------------------|:------:|
+| precisionRound | precision      | Number  | 0       | Rounds a number to the specified precision      | Number |
+| toCommaString  |                |         |         | Converts a number to a comma seperated string   | String |
+| toDollarString | showDollarSign | Boolean | true    | Converts a number to a dollar string            | String |
 
 **Required parameters are bolded**
 
