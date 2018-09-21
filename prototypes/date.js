@@ -1,11 +1,11 @@
-Date.prototype.addTimezoneOffset = function() {
+Date.prototype.addTimezoneOffset = function () {
     var now = new Date();
     var offset = now.getTimezoneOffset();
 
     this.setMinutes(this.getMinutes() + offset);
 }
 
-Date.prototype.applyTimezone = function() {
+Date.prototype.applyTimezone = function () {
     console.warn("WARNING: This function is deprecated, please convert to using 'removeTimezoneOffset'");
 
     var date = new Date(this);
@@ -14,31 +14,34 @@ Date.prototype.applyTimezone = function() {
     return date;
 }
 
-Date.prototype.getMinutesString = function() {
+Date.prototype.getMinutesString = function () {
     var mins = this.getMinutes();
     return mins < 10 ? "0" + mins : mins;
 }
 
-Date.prototype.getHoursString = function() {
+Date.prototype.getHoursString = function () {
     var hours = this.getHours();
     return hours < 10 ? "0" + hours : hours;
 }
 
-Date.prototype.removeTimezoneOffset = function() {
+Date.prototype.removeTimezoneOffset = function () {
     var now = new Date();
     var offset = now.getTimezoneOffset();
 
     this.setMinutes(this.getMinutes() - offset);
 }
 
-Date.prototype.subMinutes = function(date) {
+Date.prototype.subMinutes = function (date) {
     return (new Date(date) - this) / 60000;
 }
 
 /**
  * Depreciated 1.2.0
  */
-Date.prototype.toFormattedString = function(monthDisplay = 'short', showTime = true) {
+Date.prototype.toFormattedString = function (monthDisplay, showTime) {
+    var monthDisplay = monthDisplay || 'short';
+    var showTime = showTime || true;
+
     if (monthDisplay != 'short' && monthDisplay != 'long') {
         throw "ERROR: toFormattedString: monthDisplay must be either 'short' or 'long'";
     }
@@ -73,23 +76,61 @@ Date.prototype.toFormattedString = function(monthDisplay = 'short', showTime = t
  *
  * @return string
  */
-Date.prototype.format = function(format = 'M d Y') {
+Date.prototype.format = function (format) {
+    var format = format || 'M d Y';
+
     // Check if a valid date is being used
     if (this.getTime() !== this.getTime()) return;
 
     var months = [
-        { short: "Jan", long: "January" },
-        { short: "Feb", long: "February" },
-        { short: "Mar", long: "March" },
-        { short: "Apr", long: "April" },
-        { short: "May", long: "May" },
-        { short: "Jun", long: "June" },
-        { short: "Jul", long: "July" },
-        { short: "Aug", long: "August" },
-        { short: "Sep", long: "September" },
-        { short: "Oct", long: "October" },
-        { short: "Nov", long: "November" },
-        { short: "Dec", long: "December" }
+        {
+            short: "Jan",
+            long: "January"
+        },
+        {
+            short: "Feb",
+            long: "February"
+        },
+        {
+            short: "Mar",
+            long: "March"
+        },
+        {
+            short: "Apr",
+            long: "April"
+        },
+        {
+            short: "May",
+            long: "May"
+        },
+        {
+            short: "Jun",
+            long: "June"
+        },
+        {
+            short: "Jul",
+            long: "July"
+        },
+        {
+            short: "Aug",
+            long: "August"
+        },
+        {
+            short: "Sep",
+            long: "September"
+        },
+        {
+            short: "Oct",
+            long: "October"
+        },
+        {
+            short: "Nov",
+            long: "November"
+        },
+        {
+            short: "Dec",
+            long: "December"
+        }
     ];
 
     // Insert Year

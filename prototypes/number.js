@@ -7,7 +7,7 @@ Number.prototype.toCommaString = function () {
     return String(result);
 }
 
-Number.prototype.toDollarString = function (showDollarSign = true) {
+Number.prototype.toDollarString = function () {
     var val = this.toFixed(2);
     var valSplit = val.split('.');
 
@@ -21,9 +21,11 @@ Number.prototype.toDollarString = function (showDollarSign = true) {
 
     val = valSplit[0] + "." + valSplit[1];
 
-    return showDollarSign ? "$" + val : val;
+    return "$" + val;
 }
 
-Number.prototype.precisionRound = function (precision = 0) {
-    return Number(Math.round(this + 'e' + precision) + 'e-' + precision);
+Number.prototype.precisionRound = function (precision) {
+    var precision = precision || 0;
+    var factor = Math.pow(10, precision);
+    return Math.round(this * factor) / factor;
 }
