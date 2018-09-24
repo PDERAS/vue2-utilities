@@ -8,7 +8,12 @@ Number.prototype.toCommaString = function () {
 }
 
 Number.prototype.toDollarString = function (showDollarSign) {
-    var showDollarSign = showDollarSign || true;
+    if (typeof showDollarSign === 'boolean') {
+        var showDollarSign = showDollarSign;
+    } else {
+        var showDollarSign = true;
+    }
+
     var val = this.toFixed(2);
     var valSplit = val.split('.');
 
