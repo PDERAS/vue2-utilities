@@ -35,6 +35,7 @@ this.$utils.redirectTo('/login')
 | printView    | **html**, timeout          | String, Number          | Create a print screen for the view given, default timeout is 500ms               | N/A         |
 | nl2br        | **str** <br> is_xhtml      | String <br> Boolean     | Converts all newline characters in a string into 'br' tag                        | String      |
 | redirectTo   | **url**                    | String                  | Redirects the window to a new url (based off hostname url)                       | N/A         |
+| safeActiveElement | **doc**               | HTMLElement             | Gets the active element safely from the doc                                      | HTMLElement |
 | shadeColor   | **color** <br> **percent** | String <br> Number      | Takes a color and a percent and shades that color                                | String      |
 
 **Required parameters are bolded**

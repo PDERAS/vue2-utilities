@@ -168,6 +168,30 @@ var install = function (Vue, options) {
         },
 
         /**
+         * Gets the documents safe active element.
+         * REF: https://gist.github.com/Alex1990/046a6553dc83e22dd6f4
+         *
+         * @param HTMLWindow doc
+         *
+         * @return HTMLElement
+         */
+        safeActiveElement: function safeActiveElement(doc) {
+            doc = doc || document;
+            var activeElement;
+
+            try {
+                activeElement = doc.activeElement;
+                if (!activeElement || !activeElement.nodeName) {
+                    activeElement = doc.body;
+                }
+            } catch ( error ) {
+                activeElement = doc.body;
+            }
+
+            return activeElement;
+        }
+
+        /**
          * Takes a color and a percent and shades that color
          *
          * @param string color
