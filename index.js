@@ -189,7 +189,7 @@ var install = function (Vue, options) {
             }
 
             return activeElement;
-        }
+        },
 
         /**
          * Takes a color and a percent and shades that color
