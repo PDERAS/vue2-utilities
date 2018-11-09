@@ -1,4 +1,4 @@
-let install = function (Vue, options) {
+var install = function (Vue, options) {
     if (!options || (options && options.extendDate)) {
         require('./prototypes/date');
     }
@@ -46,9 +46,13 @@ let install = function (Vue, options) {
             while (el && el.parentNode) {
                 el = el.parentNode;
                 if (type == 'id') {
-                    if (el.id && el.id == idn) return el;
+                    if (el.id && el.id == idn) {
+                        return el;
+                    }
                 } else {
-                    if (el.classList && el.classList.contains(idn)) return el;
+                    if (el.classList && el.classList.contains(idn)) {
+                        return el;
+                    }
                 }
             }
 
@@ -74,7 +78,7 @@ let install = function (Vue, options) {
                     var a = arr[i].split('=');
 
                     var paramNum = undefined;
-                    let slice = function slice(v) {
+                    var slice = function slice(v) {
                         paramNum = v.slice(1, -1);
                         return '';
                     }
